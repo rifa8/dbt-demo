@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_order_details
+    description: "staging model for order details"
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - order_date
+            - brand_name
+            - product_name
+  - name: stg_order_details_normalized
+    description: "normalized phone number in order details"
+    columns:
+      - name: customer_phone
+        tests:
+          - not_null
+      - name: normalized_customer_phone
+        tests:
+          - not_null
+      - name: country
+        tests:
+          - not_null

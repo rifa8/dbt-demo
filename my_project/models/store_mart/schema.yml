@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: fct_per_brand_daily_sales
+    description: "daily_sales_for_each_brand"
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - order_date
+            - brand_name
+  - name: fct_per_country_daily_sales
+    description: "daily sales for each country"
+    columns:
+      - name: country
+        tests:
+          - not_null
