@@ -1,4 +1,4 @@
-# In this repo
+# In This Repo
 
 - Setup run postgresql
 - Setup DBT
